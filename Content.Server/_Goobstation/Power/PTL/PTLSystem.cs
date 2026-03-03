@@ -3,35 +3,29 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Power.PTL;
+using System.Numerics;
+using System.Text;
 using Content.Server.Flash;
 using Content.Server.Popups;
-using Content.Server.Power.Components;
 using Content.Server.Power.SMES;
 using Content.Server.Stack;
 using Content.Server.Weapons.Ranged.Systems;
-using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
-using Content.Shared.Radiation.Components;
-using Content.Server.Stack;
+using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared._Goobstation.Power.PTL;
+using Content.Shared.Stacks;
 using Content.Shared.Tag;
-using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Robust.Server.Audio;
-using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using System.Numerics;
-using System.Text;
-using Content.Shared.Power.Components;
-using Content.Shared.Stacks;
-using Content.Shared.Power.EntitySystems;
-namespace Content.Server.Power.PTL;
+
+namespace Content.Server._Goobstation.Power.PTL;
+//Euphoria Port from Goobstation
 
 public sealed partial class PTLSystem : EntitySystem
 {
@@ -59,17 +53,17 @@ public sealed partial class PTLSystem : EntitySystem
         base.Initialize();
 
         UpdatesAfter.Add(typeof(SmesSystem));
-        SubscribeLocalEvent<PTLComponent, InteractHandEvent>(OnInteractHand);
-        SubscribeLocalEvent<PTLComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
-        SubscribeLocalEvent<PTLComponent, ExaminedEvent>(OnExamine);
-        SubscribeLocalEvent<PTLComponent, GotEmaggedEvent>(OnEmagged);
+        SubscribeLocalEvent<Shared._Goobstation.Power.PTL.PTLComponent, InteractHandEvent>(OnInteractHand);
+        SubscribeLocalEvent<Shared._Goobstation.Power.PTL.PTLComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
+        SubscribeLocalEvent<Shared._Goobstation.Power.PTL.PTLComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<Shared._Goobstation.Power.PTL.PTLComponent, GotEmaggedEvent>(OnEmagged);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var eqe = EntityQueryEnumerator<PTLComponent>();
+        var eqe = EntityQueryEnumerator<Shared._Goobstation.Power.PTL.PTLComponent>();
 
         while (eqe.MoveNext(out var uid, out var ptl))
         {
@@ -83,7 +77,7 @@ public sealed partial class PTLSystem : EntitySystem
         }
     }
 
-    private void Tick(Entity<PTLComponent> ent)
+    private void Tick(Entity<Shared._Goobstation.Power.PTL.PTLComponent> ent)
     {
         if (!TryComp<BatteryComponent>(ent, out var battery))
             return;
@@ -94,7 +88,7 @@ public sealed partial class PTLSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void Shoot(Entity<PTLComponent, BatteryComponent> ent)
+    private void Shoot(Entity<Shared._Goobstation.Power.PTL.PTLComponent, BatteryComponent> ent)
     {
         var megajoule = 1e6;
         var charge = _battery.GetCharge((ent, ent.Comp2)) / megajoule;
@@ -123,7 +117,7 @@ public sealed partial class PTLSystem : EntitySystem
         ent.Comp1.SpesosHeld += spesos;
     }
 
-    private void OnInteractHand(Entity<PTLComponent> ent, ref InteractHandEvent args)
+    private void OnInteractHand(Entity<Shared._Goobstation.Power.PTL.PTLComponent> ent, ref InteractHandEvent args)
     {
         ent.Comp.Active = !ent.Comp.Active;
         var enloc = ent.Comp.Active ? Loc.GetString("ptl-enabled") : Loc.GetString("ptl-disabled");
@@ -134,7 +128,7 @@ public sealed partial class PTLSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnAfterInteractUsing(Entity<PTLComponent> ent, ref AfterInteractUsingEvent args)
+    private void OnAfterInteractUsing(Entity<Shared._Goobstation.Power.PTL.PTLComponent> ent, ref AfterInteractUsingEvent args)
     {
         var held = args.Used;
 
@@ -160,7 +154,7 @@ public sealed partial class PTLSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnExamine(Entity<PTLComponent> ent, ref ExaminedEvent args)
+    private void OnExamine(Entity<Shared._Goobstation.Power.PTL.PTLComponent> ent, ref ExaminedEvent args)
     {
         var sb = new StringBuilder();
         var enloc = ent.Comp.Active ? Loc.GetString("ptl-enabled") : Loc.GetString("ptl-disabled");
@@ -170,7 +164,7 @@ public sealed partial class PTLSystem : EntitySystem
         args.PushMarkup(sb.ToString());
     }
 
-    private void OnEmagged(EntityUid uid, PTLComponent component, ref GotEmaggedEvent args)
+    private void OnEmagged(EntityUid uid, Shared._Goobstation.Power.PTL.PTLComponent component, ref GotEmaggedEvent args)
     {
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
             return;

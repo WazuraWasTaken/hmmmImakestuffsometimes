@@ -3,7 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Client.Power.PTL;
+namespace Content.Client._Goobstation.Power.PTL;
+//Euphoria Port from Goobstation
 
 [RegisterComponent]
 public sealed partial class PTLVisualsComponent : Component

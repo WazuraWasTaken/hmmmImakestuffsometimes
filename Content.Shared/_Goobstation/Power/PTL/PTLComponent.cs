@@ -3,12 +3,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Power.PTL;
+namespace Content.Shared._Goobstation.Power.PTL;
+//Euphoria Port from Goobstation
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class PTLComponent : Component

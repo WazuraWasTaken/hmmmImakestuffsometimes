@@ -67,6 +67,8 @@ public sealed partial class BatteryComponent : Component
 
     /// <summary>
     /// Current charge of the battery in joules (ie. watt seconds)
+    ///
+    /// Euphoria Port from Goobstation
     /// </summary>
     [DataField("CurrentCharge")]
     public float CurrentCharge;

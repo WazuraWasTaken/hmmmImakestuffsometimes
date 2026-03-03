@@ -16,12 +16,14 @@
 
 using Content.Shared.Damage;
 using Content.Shared.Physics;
+using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Reflect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Weapons.Ranged;
+namespace Content.Shared._Goobstation.Weapons.Ranged;
+//Euphoria Port from Goobstation
 
 [Prototype]
 public sealed partial class HitscanPrototype : IPrototype, IShootable

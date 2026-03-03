@@ -3,11 +3,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Power.PTL;
+using Content.Shared._Goobstation.Power.PTL;
 using Robust.Client.GameObjects;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Power.PTL;
+namespace Content.Client._Goobstation.Power.PTL;
+//Euphoria Port from Goobstation
 
 public sealed partial class PTLVisualsSystem : EntitySystem
 {
@@ -25,7 +26,7 @@ public sealed partial class PTLVisualsSystem : EntitySystem
     private void UpdateVisuals(Entity<PTLVisualsComponent> ent)
     {
         if (!TryComp<SpriteComponent>(ent, out var sprite)
-            || !TryComp<PTLComponent>(ent, out var ptl))
+            || !TryComp<Shared._Goobstation.Power.PTL.PTLComponent>(ent, out var ptl))
             return;
 
         sprite.LayerSetVisible(PTLVisualLayers.Unpowered, ptl.Active);
