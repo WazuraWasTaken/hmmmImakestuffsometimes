@@ -758,6 +758,12 @@
 
 # trinkets
 - type: loadout
+  id: HandheldStationMap
+  storage:
+    back:
+    - HandheldStationMap
+
+- type: loadout
   id: FishingRodGoon
   storage:
     back:
