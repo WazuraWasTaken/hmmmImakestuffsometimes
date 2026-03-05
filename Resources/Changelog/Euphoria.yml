@@ -1030,3 +1030,12 @@ Entries:
         in-line with the main art style now.
   id: 127
   time: '2026-03-05T07:06:07.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        The reason why gloves got dirtier faster during surgery was discovered
+        (you used them with every surgery step without swapping unlike tools),
+        so now they been changed get dirtier slower.
+  id: 128
+  time: '2026-03-05T07:06:45.0000000+00:00'
