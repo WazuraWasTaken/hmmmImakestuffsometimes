@@ -1175,3 +1175,9 @@ Entries:
       message: Fixed a few loadout issues.
   id: 144
   time: '2026-03-07T10:17:59.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: The fish vendor will not scam you out of your beer bottles anymore.
+  id: 145
+  time: '2026-03-07T10:18:47.0000000+00:00'
