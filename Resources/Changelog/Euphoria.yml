@@ -1497,3 +1497,11 @@ Entries:
       message: Asakim cannot be given terminate objectives
   id: 183
   time: '2026-03-22T02:28:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Your character should no longer retain kudzu slowdown / damage if the
+        kudzu was to be destroyed while your character was walking through it.
+  id: 184
+  time: '2026-03-22T02:39:51.0000000+00:00'
