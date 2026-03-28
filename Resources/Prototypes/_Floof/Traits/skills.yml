@@ -57,7 +57,7 @@
   - !type:OneOfSpeciesCondition
     species:
     - Oni
-  effects:
+  effects:s
   - !type:OverrideCompsEffect
     components:
     - type: BonusMeleeDamage
