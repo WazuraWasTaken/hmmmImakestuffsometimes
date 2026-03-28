@@ -4,12 +4,12 @@ trait-light-step-desc = You move with a gentle step, which makes your footsteps 
 trait-spearmaster-name = Spearmaster
 trait-spearmaster-desc =
     You have an outstanding proficiency with spears, wielding them as an extension of your body.
-    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+    Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 25%.
 
 trait-swashbuckler-name = Swashbuckler
 trait-swashbuckler-desc =
     You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.
-    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 20%.
+    Your melee Slash bonus is increased to 35%, but your melee Blunt bonus is reduced to 25%.
 
 trait-weaponsgeneralist-name = Weapons Generalist
 trait-weaponsgeneralist-desc =

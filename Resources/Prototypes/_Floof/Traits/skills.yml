@@ -39,8 +39,8 @@
     - type: BonusMeleeDamage
       damageModifierSet:
         coefficients:
-          Blunt: 1.2
-          Slash: 1.2
+          Blunt: 1.25
+          Slash: 1.25
           Piercing: 1.35
           Asphyxiation: 1.35
 
@@ -57,15 +57,15 @@
   - !type:OneOfSpeciesCondition
     species:
     - Oni
-  effects:s
+  effects:
   - !type:OverrideCompsEffect
     components:
     - type: BonusMeleeDamage
       damageModifierSet:
         coefficients:
-          Blunt: 1.2
+          Blunt: 1.25
           Slash: 1.35
-          Piercing: 1.2
+          Piercing: 1.25
           Asphyxiation: 1.35
 
 - type: trait
