@@ -22,15 +22,4 @@ trait-weakness-name = Weakness
 trait-weakness-desc =
     You are naturally more vulnerable to fatigue. Your stamina pool is halved, making you greately vulnerable to shoving and stunning attacks.
 
-trait-spearmaster-name = Spearmaster
-trait-spearmaster-desc =
-    Test
-
-trait-swashbuckler-name = Swashbuckler
-trait-swashbuckler-desc =
-    Test
-
-trait-weaponsgeneralist-name = WeaponsGeneralist
-trait-weaponsgeneralist-desc =
-    Test
 
