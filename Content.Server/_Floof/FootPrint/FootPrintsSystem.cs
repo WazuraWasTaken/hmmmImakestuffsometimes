@@ -100,11 +100,7 @@ public sealed class FootPrintsSystem : EntitySystem
 
         if (_appearanceQuery.TryComp(entity, out var appearance))
         {
-            // Floofstation section - replaced the below
-
-            // _appearance.SetData(entity, FootPrintVisualState.State, PickState(uid, dragging), appearance);
-            // _appearance.SetData(entity, FootPrintVisualState.Color, component.PrintsColor, appearance);
-
+            // Floofstation section - replaced
             var color = component.ContainedSolution.GetColor(_protoMan);
             color.A = Math.Max(0.3f, component.ContainedSolution.FillFraction);
 
@@ -121,16 +117,7 @@ public sealed class FootPrintsSystem : EntitySystem
             : transform.LocalRotation + Angle.FromDegrees(180f);
 
         // Floofstation - replaced the below
-        // component.PrintsColor = component.PrintsColor.WithAlpha(Math.Max(0f, component.PrintsColor.A - component.ColorReduceAlpha));
         component.StepPos = transform.LocalPosition;
-        //
-        // if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer)
-        //     || !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution)
-        //     || string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
-        //     return;
-        //
-        // _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 0.01, out _); //was 1
-
         if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer)
             || !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution))
             return;

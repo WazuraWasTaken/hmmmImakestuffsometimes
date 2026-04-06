@@ -113,6 +113,19 @@
             - material: WoodPlank
               amount: 2
 
+        # Floofstation section
+        - to: N14TableWoodSettler
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          conditions:
+          - !type:EntityAnchored { }
+          steps:
+          - material: WoodPlank
+            amount: 2
+            doAfter: 2
+        # Floofstation section end
+
     - node: N14WoodFrame
       entity: N14WoodTableFrame
       edges:
@@ -510,3 +523,18 @@
               doAfter: 5
             - tool: Prying
               doAfter: 4
+
+    # Floofstation section
+    - node: N14TableWoodSettler
+      entity: N14TableWoodSettler
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: MaterialWoodPlank1
+          amount: 2
+        - !type:DeleteEntity
+        steps:
+        - tool: Prying
+          doAfter: 3
+    # Floofstation section end

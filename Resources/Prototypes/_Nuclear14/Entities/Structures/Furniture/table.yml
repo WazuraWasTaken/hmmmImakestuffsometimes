@@ -712,16 +712,6 @@
         - TableLayer
 
 - type: entity
-  parent: N14TableWoodSquare
-  id: N14TableWoodRound
-  name: wooden table
-  description: A wooden round table.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
-    state: table_wood_round
-
-- type: entity
   id: N14TableWoodSettler
   parent: TableWood # Floof - M3739  - #1113 - No more growing steel.
   name: wooden table
