@@ -1952,3 +1952,15 @@ Entries:
         players to use with the character they chose for that round.
   id: 246
   time: '2026-04-10T03:50:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now edit your character's scent mid-game. Right-click menu >
+        interact > edit scents. Admin ghosts can edit scents on all entities.
+    - type: Fix
+      message: >-
+        The "interact" category no longer has smelling-related verbs above the
+        basic ones.
+  id: 247
+  time: '2026-04-10T09:26:40.0000000+00:00'
