@@ -2097,3 +2097,9 @@ Entries:
       message: Slimes get hurt by water *properly*
   id: 262
   time: '2026-04-13T22:35:23.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Respawn button actually respawning you.
+  id: 263
+  time: '2026-04-14T05:43:22.0000000+00:00'
