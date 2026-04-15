@@ -2137,3 +2137,9 @@ Entries:
       message: Highlight issues for LO and SecTech roles
   id: 266
   time: '2026-04-15T10:40:12.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: IPC emotes, piloting, footsteps, and opening doors
+  id: 267
+  time: '2026-04-15T22:09:09.0000000+00:00'
