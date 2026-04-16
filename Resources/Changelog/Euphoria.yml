@@ -2176,3 +2176,9 @@ Entries:
       message: Only the user can see chronic pain popups.
   id: 271
   time: '2026-04-16T07:04:57.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Add
+      message: Arachne can now use arachnid emotes.
+  id: 272
+  time: '2026-04-16T07:15:07.0000000+00:00'
