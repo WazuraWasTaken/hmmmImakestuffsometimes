@@ -2182,3 +2182,9 @@ Entries:
       message: Arachne can now use arachnid emotes.
   id: 272
   time: '2026-04-16T07:15:07.0000000+00:00'
+- author: TheRedForestButcher
+  changes:
+    - type: Fix
+      message: Fixed some issues with the Chief Engineer Loadout
+  id: 273
+  time: '2026-04-16T07:16:30.0000000+00:00'
